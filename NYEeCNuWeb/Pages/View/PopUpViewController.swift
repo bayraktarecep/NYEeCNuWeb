@@ -62,6 +62,7 @@ class PopUpViewController: UIViewController, MKMapViewDelegate {
             if let data = data {
                 if let tipsResponse = try? JSONDecoder().decode(TipsVenues.self, from: data) {
                     DispatchQueue.main.async {
+                        //TODO: After kingfisher uploaded, tips not shown properly, check 
                         self.tipsLabel.text = tipsResponse.response?.tips?.items?.first.map{$0.text ?? ""}
                         self.imageView.kf.indicatorType = .activity
                         //self.imageView.kf.setImage(with: URL(string: tipsResponse.response?.tips?.items?.first.map{($0.photourl ?? "")} ?? ""))

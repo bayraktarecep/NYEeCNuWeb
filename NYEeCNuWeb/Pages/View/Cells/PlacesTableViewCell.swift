@@ -27,6 +27,7 @@ class PlacesTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    //MARK: - Configure outlets from Api
     
     func loadWith(data: VenueElements) {
         placeName.text = data.name

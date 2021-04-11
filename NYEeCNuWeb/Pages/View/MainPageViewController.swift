@@ -39,6 +39,8 @@ class MainPageViewController: UIViewController, CLLocationManagerDelegate, UITex
                 placesVC?.place = placeTextField.text
                 placesVC?.city = locationTextField.text
                 self.navigationController?.pushViewController(placesVC!, animated: true)
+                
+                //TODO: If places leaved empty goes to nearest places from location ll
             } else if placeTextField.text != "" && locationTextField.text == "" {
                 let placesVC = storyboard?.instantiateViewController(identifier: "Places") as? PlacesViewController
                 placesVC?.currentLocation = self.currentLocation
